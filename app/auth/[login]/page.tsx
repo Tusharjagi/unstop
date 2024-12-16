@@ -1,5 +1,7 @@
+import Login from "@/Components/login";
+
 const User = (): JSX.Element => {
-  return <h1>User</h1>;
+  return <Login />;
 };
 
 export default User;

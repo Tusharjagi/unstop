@@ -4,7 +4,7 @@ import textConst from "@/utils/textConst";
 import SocialLoginButtons from "../socialButtons";
 import InputFields from "../input-fields";
 
-const Login = () => {
+const Home = () => {
   return (
     <div id="login_page" className={styles.login_wrapper}>
       <div className={styles.image_container}>
@@ -41,4 +41,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Home;

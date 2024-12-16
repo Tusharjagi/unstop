@@ -12,6 +12,7 @@ const textConst = {
   login: "login",
   doNotHavingAccount: "Don’t have an account?",
   register: "Register",
+  logout: "logout",
 };
 
 export default textConst;
