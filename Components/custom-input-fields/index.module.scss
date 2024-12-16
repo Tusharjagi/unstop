@@ -1,0 +1,32 @@
+.input_filed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-lighthouse);
+  height: 3.5rem;
+  border-radius: 1rem;
+
+  img {
+    padding: 12px;
+  }
+
+  .label {
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    background-color: var(--color-lighthouse);
+    font-weight: 700;
+    padding: 0;
+  }
+
+  input:focus-visible {
+    outline: unset;
+  }
+}

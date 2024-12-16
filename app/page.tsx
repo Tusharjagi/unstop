@@ -1,9 +1,8 @@
 import React from "react";
-import Index from "@/Components/Index";
+import Home from "@/Components/home/index";
 
 const Page = (): JSX.Element => {
-  const name = "tushar";
-  return <Index {...{ name }} />;
+  return <Home />;
 };
 
 export default Page;

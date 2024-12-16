@@ -1,4 +1,24 @@
+@import "/styles/colors";
+
+:root {
+  --font-inter: "Inter", sans-serif;
+  --color-black: #{$black};
+  --color-lighthouse: #{$lighthouse};
+  --color-white: #{$white};
+  --color-jupiter: #{$jupiter};
+  --color-primary: #{$primary};
+  --color-silver: #{$silver};
+  --color-success: #{$green};
+}
+
+* {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 body {
-  background-color: #1e3445;
-  color: white;
+  all: unset;
+  font-family: var(--font-inter);
+  background-color: var(--color-lighthouse);
+  color: var(--color-black);
 }
