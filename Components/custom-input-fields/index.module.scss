@@ -5,6 +5,7 @@
   background-color: var(--color-lighthouse);
   height: 3.5rem;
   border-radius: 1rem;
+  position: relative;
 
   img {
     padding: 12px;
@@ -29,4 +30,22 @@
   input:focus-visible {
     outline: unset;
   }
+
+  .help_text {
+    position: absolute;
+    font-size: 14px;
+    color: red;
+    text-align: left;
+    bottom: -20px;
+    left: 0.5rem;
+  }
+}
+
+.error_input_filed {
+  @extend .input_filed;
+  border: 2px solid red;
+  margin-bottom: 1.2rem;
+  transition:
+    border 0.3s ease-in-out,
+    margin-bottom 0.3s ease-in-out;
 }

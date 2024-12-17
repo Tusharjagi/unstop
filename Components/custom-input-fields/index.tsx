@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { JSX, useRef } from "react";
 import Image from "next/image";
 import styles from "./index.module.scss";
 
@@ -16,6 +16,9 @@ interface CustomInputFieldProps {
   onFocus?: () => void;
   onBlur?: () => void;
   onClick?: () => void;
+  endIconClick?: () => void;
+  error?: boolean;
+  helpText?: string;
 }
 
 const CustomInputField = ({
@@ -30,6 +33,9 @@ const CustomInputField = ({
   onFocus,
   onBlur,
   onClick,
+  endIconClick,
+  error,
+  helpText,
 }: CustomInputFieldProps): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -40,7 +46,7 @@ const CustomInputField = ({
   };
 
   return (
-    <div className={styles.input_filed} onClick={handleFocus}>
+    <div className={`${helpText && error ? styles.error_input_filed : styles.input_filed}`} onClick={handleFocus}>
       {typeof startIcon === "string" && startIcon.trim() !== "" && (
         <Image src={startIcon} alt="icon" width={28} height={28} />
       )}
@@ -59,8 +65,9 @@ const CustomInputField = ({
         />
       </div>
       {typeof endIcon === "string" && endIcon.trim() !== "" && (
-        <Image src={endIcon} alt="icon" width={28} height={28} />
+        <Image src={endIcon} alt="icon" width={28} height={28} onClick={endIconClick} style={{ cursor: "pointer" }} />
       )}
+      {helpText && error && <p className={styles.help_text}>{helpText}</p>}
     </div>
   );
 };
