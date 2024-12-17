@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 const Login: React.FC = () => {
   const router = useRouter();
   // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-  const userData = JSON.parse((window.localStorage.getItem("userData") ?? "") || "{}");
+  const userData = typeof window !== "undefined" && JSON.parse((window.localStorage.getItem("userData") ?? "") || "{}");
 
   const handleLogout = (): void => {
     router.push("/");
