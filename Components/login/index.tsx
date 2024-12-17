@@ -2,7 +2,7 @@ import textConst from "@/utils/textConst";
 import Image from "next/image";
 import styles from "./index.module.scss";
 
-const Login = () => {
+const Login: React.FC = () => {
   return (
     <div className={styles.login_wrapper}>
       <div className={styles.heading}>

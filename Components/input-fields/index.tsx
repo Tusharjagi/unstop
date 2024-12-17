@@ -2,7 +2,7 @@ import textConst from "@/utils/textConst";
 import CustomInputField from "../custom-input-fields";
 import styles from "./index.module.scss";
 
-const InputFields = () => {
+const InputFields: React.FC = () => {
   return (
     <div className={styles.input_fields}>
       <CustomInputField startIcon="/assets/profile.svg" label={textConst.userName} id={textConst.userName} />

@@ -7,7 +7,7 @@ const socialLogins = [
   { src: "/assets/facebook.svg", alt: "facebook-image", text: textConst.facebook },
 ];
 
-const SocialLoginButtons = () => {
+const SocialLoginButtons: React.FC = () => {
   return (
     <div className={styles.social_logins}>
       {socialLogins.map((login, index) => (

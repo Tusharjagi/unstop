@@ -30,18 +30,20 @@ const CustomInputField = ({
   onFocus,
   onBlur,
   onClick,
-}: CustomInputFieldProps) => {
+}: CustomInputFieldProps): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleFocus = () => {
-    if (inputRef.current) {
+  const handleFocus = (): void => {
+    if (inputRef.current !== null) {
       inputRef.current.focus();
     }
   };
 
   return (
     <div className={styles.input_filed} onClick={handleFocus}>
-      {startIcon ? <Image src={startIcon} alt="icon" width={28} height={28} /> : null}
+      {typeof startIcon === "string" && startIcon.trim() !== "" && (
+        <Image src={startIcon} alt="icon" width={28} height={28} />
+      )}
       <div className={styles.label}>
         <label htmlFor={id}>{label}</label>
         <input
@@ -56,7 +58,9 @@ const CustomInputField = ({
           onClick={onClick}
         />
       </div>
-      {endIcon ? <Image src={endIcon} alt="icon" width={28} height={28} /> : null}
+      {typeof endIcon === "string" && endIcon.trim() !== "" && (
+        <Image src={endIcon} alt="icon" width={28} height={28} />
+      )}
     </div>
   );
 };
